@@ -8,7 +8,7 @@
 
 [2. Conceitos](#c2)
 
-[3. Desenvolvimento](#c3)
+[3. Desenvolvimento/Tutorial](#c3)
 
 [4. Avaliação em pares](#c4)
 
@@ -51,8 +51,10 @@
 
 ### Simulação no TinkerCad
 
-**Figura 1 – Código do Blink Interno**
+**Figura 1 – Preview da simulação com TinkerCad**
 
 ![TinkerCad](assets/simulacaonotinkercad.png)
 
 [![Clique aqui e acesse o link para ver simulação do semáforo no TinkerCad]](https://www.tinkercad.com/things/bCjwwWSZ2XV-semaforo-offline-simulacao?sharecode=v45DtqToeaOeALB79CvXP3qfbwuYaOAtqgDX2i5XMwA)
+
+### Parte 1 - Montagem Física do Semáforo
