@@ -1,13 +1,17 @@
 # Documentação - Semáforo Offline 
 
--<a href="https://www.linkedin.com/in/mariana-pereira-de-souza1/">Mariana Pereira</a>
+- <a href="https://www.linkedin.com/in/mariana-pereira-de-souza1/">Mariana Pereira</a>
 
 ## Sumário
 
 [1. Introdução](#c1)
+
 [2. Conceitos](#c2)
+
 [3. Desenvolvimento](#c3)
+
 [4. Avaliação em pares](#c4)
+
 [5. Conclusão](#c5)
 
 ## <a name="c1"></a>1. Introdução
