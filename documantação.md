@@ -74,3 +74,14 @@ Agora vamos nos direcionar ao tutorial, para realizar a confecção do semáforo
 - Jumpers 
 - Led´s 
 
+
+#### 2. Ligação da protoboard com o Arduíno 
+
+&nbsp;&nbsp;&nbsp;&nbsp;A protoboard, tem como função a montagem de circuitos físicos sem a necessidade de solda, por se tratarem de circuitos temporários. Portanto, seria uma espécie de placa para prototipagem. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Na protoboard que será feita a montagem do circuito, primeiramente, vamos entender o funcionamento da protoboard. A protoboard é uma placa de ensaio dividida linhas que contem diversos orifícios que estão interligados eletricamente em filas horizontais ou verticais, variando sobre a área da placa.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Temos também a parte central da protoboard conhecida como área de conexão, local onde os componentes são inseridos, essa aréa é rotulada por letras e dividida em colunas verticais. Há também a alimentação da protoboard, geralmente marcadas com linha coloridas e símbolos, essas linhs estão conectadas horiontalmente, tanto positivas tanto negativas. 
+
+
+
