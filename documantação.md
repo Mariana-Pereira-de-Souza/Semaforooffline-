@@ -35,7 +35,8 @@
 
 ### Parte 1 - Montagem Física do Semáforo
 
-### Materiais utilizados 
+### Materiais utilizados: 
 
-
-
+|        Material     |   Descrição  | Função  |                                                  
+| :-----------------------: | :-----------------------: | :-----------------------: |
+|     `` Led ``     | O led é um diodo emissor, um pequeno componente   | Nota do estudante na primeira prova.                               |   Contínua    |
