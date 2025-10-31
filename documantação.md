@@ -22,6 +22,11 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;"Você começou a estagiar no Departamento de Engenharia de Trânsito e ficou responsável por controlar o fluxo em uma via movimentada do bairro Butantã. Seu desafio é montar e programar um semáforo que garanta a segurança de pedestres e veículos, seguindo a lógica de tempo de cada fase das luzes, desde a montagem dos LEDs até a programação da sequência correta. Agora, você tem a chance de aplicar seus conhecimentos e desenvolver um sistema essencial para o controle do trânsito. Será que você consegue criar um semáforo que funcione perfeitamente, como aqueles que encontramos nas ruas todos os dias?"
 
+"Você deve programar o comportamento do semáforo para alternar entre as fases vermelho, amarelo e verde, seguindo a lógica abaixo:
+- 6 segundos no vermelho
+- 4 segundos no verde
+- 2 segundos no amarelo"
+
 &nbsp;&nbsp;&nbsp;&nbsp;Portanto, esses são os nossos objetivos ao decorrer dessa documentação, vamos seguir para o início do resumo dos conceitos essenciais para o entendimento da confecção do semáforo.
 
 
@@ -227,4 +232,4 @@ void loop() {
 
 <a name="c5"></a>5. Conclusão
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;Pronto! Podemos concluir projeto por inteiro, vários conhecimentos importantes para a confecção de circuito foram levantadas hoje. A relização do projeto do semáforo, permitiu elucidar diversos conhecimentos desenvolvidos por mim até agora. Portanto, agradeço a oportunidade de aprendizado.
