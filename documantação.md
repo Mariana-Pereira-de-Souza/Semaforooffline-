@@ -72,16 +72,52 @@ Agora vamos nos direcionar ao tutorial, para realizar a confecção do semáforo
 - Protoboard 
 - Cabo USB AB 30cm
 - Jumpers 
-- Led´s 
-
+- Leds 
+- Mdf do sinal
 
 #### 2. Ligação da protoboard com o Arduíno 
 
 &nbsp;&nbsp;&nbsp;&nbsp;A protoboard, tem como função a montagem de circuitos físicos sem a necessidade de solda, por se tratarem de circuitos temporários. Portanto, seria uma espécie de placa para prototipagem. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;Na protoboard que será feita a montagem do circuito, primeiramente, vamos entender o funcionamento da protoboard. A protoboard é uma placa de ensaio dividida linhas que contem diversos orifícios que estão interligados eletricamente em filas horizontais ou verticais, variando sobre a área da placa.
+&nbsp;&nbsp;&nbsp;&nbsp;Na protoboard que será feita a montagem do circuito.Primeiramente, vamos entender o funcionamento da protoboard. A protoboard é uma placa de ensaio dividida linhas que contem diversos orifícios que estão interligados eletricamente em filas horizontais ou verticais, variando sobre a área da placa.
 
-&nbsp;&nbsp;&nbsp;&nbsp; Temos também a parte central da protoboard conhecida como área de conexão, local onde os componentes são inseridos, essa aréa é rotulada por letras e dividida em colunas verticais. Há também a alimentação da protoboard, geralmente marcadas com linha coloridas e símbolos, essas linhs estão conectadas horiontalmente, tanto positivas tanto negativas. 
+&nbsp;&nbsp;&nbsp;&nbsp;Expicitando o que foi citado acima,a parte central da protoboard conhecida como área de conexão, local onde os componentes são inseridos, essa aréa é rotulada por letras e dividida em colunas verticais. Há também a alimentação da protoboard, geralmente marcadas com linha coloridas e símbolos, essas linhas estão conectadas horiontalmente, tanto positivas tanto negativas. 
+
+#### 3. Conectando os led´s
+
+Vamos iniciar conectando os jumpers que precisam estar ligados ao GND do arduíno, no caso a entrada terra, porém essa entrada é apenas uma. Por esse motivo, ligamos os jumpers macho-fêmea a protoboard, a parte macho se conecta na linha negativa enquanto o fêmea irá passar corrente elétrica para o led e ficará conectado ao seu lado negativo. 
+
+Siga o passo a passo para cumprir essa etapa:
+
+- Pegue sua protoboard 
+- Localize as linhas horizontais que são responsáveis pela alimentação da placa 
+- Conecte um cabo macho-macho no GND (terra) e na protoboard na linha horizontal de alimentação
+- Pegue três fios macho-fêmea, um para cada led do nosso semáforo
+- Conecte a parte macho na linha horizontal de alimentação onde já conectamos anteriormente o fio macho-macho que está conectado ao GND do arduíno 
+- Pegue seus leds e conecte a parte fêmea do jumper a parte negativa do led 
+
+O led possui uma parte negativa e positiva, e sua parte negativa é o local onde o led tem uma pequena raspagem, nesse projeto utilizados um sinal feito de mdf para conectar nossos leds, por isso o tutorial irá seguir esse caminho, sem conectar os led´s a protoboard, mas saiba que isso também é possível !
+
+Então vamos colocar os leds, na placa de mdf, com a parte raspada para cima, para facilitar a identificação. Agora vamos, resolver a parte positiva
+
+- Pegue seu resistor de duas partes laranjas 
+- Conecte eles as colunas verticais da protoboard, porém esses resistores serão conectados na coluna a , separados um do outro, necessitamos de três resitores, um para cada led
+- Pegue um cabo macho-fêmea conecte em uma ponta do resistor na linha que contem 5 oríficios, pode conectar e qualquer um desses orifícios a frentes( faça isso com todos)
+- Agora escolha as portas de conexão do arduíno onde serão conectadas as correntes positivas
+- No meu caso, eu escolhi as portas 8, 12 e 13 
+- Agora pegue um cabo macho-macho, conecte uma ponta dele em um lado do resistor e sua outra ponta nas portas do arduíno Uno 
+- Pegue seu cabo usb, conecte no arduíno e no computador e logo depois execute o código com o arduíno IDE
+- Não esqueça de conectar seus leds a plaquinha de mdf, para criar seu semáforo
+
+Ao final da montagem o circuito ele deve estar dessa forma:
+
+**Figura 2 – Semáforo Físico 1**
+
+![Semáforo físico 1](assets/semaforo1.jpg)
+
+**Figura 3 – Semáforo Físico 2**
+
+![Semáforo físico 2](assets/semaforo2.jpg)
 
 
 
