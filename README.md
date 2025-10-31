@@ -1,4 +1,4 @@
-# Semaforo Offline
+# Semáforo Offline
 
 - <a href="https://www.linkedin.com/in/mariana-pereira-de-souza1/">Mariana Pereira</a>
 
