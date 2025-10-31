@@ -53,6 +53,6 @@
 
 **Figura 1 – Código do Blink Interno**
 
-![TikerCad](assets/Simulação no tinkercad.png)
+![TinkerCad](assets/simulacaonotinkercad.png)
 
 [![Clique aqui e acesse o link para ver simulação do semáforo no TinkerCad]](https://www.tinkercad.com/things/bCjwwWSZ2XV-semaforo-offline-simulacao?sharecode=v45DtqToeaOeALB79CvXP3qfbwuYaOAtqgDX2i5XMwA)
