@@ -39,4 +39,4 @@
 
 |        Material     |   Descrição  | Função  |                                                  
 | :-----------------------: | :-----------------------: | :-----------------------: |
-|     `` Led ``     | O led é um diodo emissor, um pequeno componente   | Nota do estudante na primeira prova.                               |   Contínua    |
+|     `` Led ``     | pequeno componente eletrônico encapsulado em uma lente de plástico ou resina colorida ou transparente, com dois terminais metálicos (ânodo e cátodo) de comprimentos diferentes. | LED é um componente semicondutor que transforma energia elétrica diretamente em luz de forma eficiente e econômica. |
