@@ -111,7 +111,7 @@ Siga o passo a passo para cumprir essa etapa:
 - Conecte eles as colunas verticais da protoboard, porém esses resistores serão conectados na coluna a , separados um do outro, necessitamos de três resitores, um para cada led;
 - Pegue um cabo macho-fêmea conecte em uma ponta do resistor na linha que contem 5 oríficios, pode conectar e qualquer um desses orifícios a frentes( faça isso com todos);
 - Agora escolha as portas de conexão do arduíno onde serão conectadas as correntes positivas;
-- No meu caso, eu escolhi as portas 8, 12 e 13 
+- No meu caso, eu escolhi as portas 8, 12 e 13;
 - Agora pegue um cabo macho-macho, conecte uma ponta dele em um lado do resistor e sua outra ponta nas portas do arduíno Uno;
 - Pegue seu cabo usb, conecte no arduíno e no computador e logo depois execute o código com o arduíno IDE;
 - Não esqueça de conectar seus leds a plaquinha de mdf, para criar seu semáforo;
