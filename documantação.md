@@ -37,6 +37,8 @@
 
 ### Componentes utilizados: 
 
+**Tabela 1 – Componentes**
+
 |        Material     |   Descrição  | Função  |                                                  
 | :-----------------------: | :-----------------------: | :-----------------------: |
 |     `` Led ``     | Pequeno componente eletrônico encapsulado em uma lente de plástico ou resina colorida ou transparente, com dois terminais metálicos (ânodo e cátodo) de comprimentos diferentes. | LED é um componente semicondutor que transforma energia elétrica diretamente em luz de forma eficiente e econômica. |
@@ -85,29 +87,29 @@ Agora vamos nos direcionar ao tutorial, para realizar a confecção do semáforo
 
 #### 3. Conectando os led´s
 
-Vamos iniciar conectando os jumpers que precisam estar ligados ao GND do arduíno, no caso a entrada terra, porém essa entrada é apenas uma. Por esse motivo, ligamos os jumpers macho-fêmea a protoboard, a parte macho se conecta na linha negativa enquanto o fêmea irá passar corrente elétrica para o led e ficará conectado ao seu lado negativo. 
+&nbsp;&nbsp;&nbsp;&nbsp;Vamos iniciar conectando os jumpers que precisam estar ligados ao GND do arduíno, no caso a entrada terra, porém essa entrada é apenas uma. Por esse motivo, ligamos os jumpers macho-fêmea a protoboard, a parte macho se conecta na linha negativa enquanto o fêmea irá passar corrente elétrica para o led e ficará conectado ao seu lado negativo. 
 
 Siga o passo a passo para cumprir essa etapa:
 
-- Pegue sua protoboard 
-- Localize as linhas horizontais que são responsáveis pela alimentação da placa 
-- Conecte um cabo macho-macho no GND (terra) e na protoboard na linha horizontal de alimentação
-- Pegue três fios macho-fêmea, um para cada led do nosso semáforo
-- Conecte a parte macho na linha horizontal de alimentação onde já conectamos anteriormente o fio macho-macho que está conectado ao GND do arduíno 
-- Pegue seus leds e conecte a parte fêmea do jumper a parte negativa do led 
+- Pegue sua protoboard;
+- Localize as linhas horizontais que são responsáveis pela alimentação da placa;
+- Conecte um cabo macho-macho no GND (terra) e na protoboard na linha horizontal de alimentação;
+- Pegue três fios macho-fêmea, um para cada led do nosso semáforo;
+- Conecte a parte macho na linha horizontal de alimentação onde já conectamos anteriormente o fio macho-macho que está conectado ao GND do arduíno; 
+- Pegue seus leds e conecte a parte fêmea do jumper a parte negativa do led; 
 
-O led possui uma parte negativa e positiva, e sua parte negativa é o local onde o led tem uma pequena raspagem, nesse projeto utilizados um sinal feito de mdf para conectar nossos leds, por isso o tutorial irá seguir esse caminho, sem conectar os led´s a protoboard, mas saiba que isso também é possível !
+&nbsp;&nbsp;&nbsp;&nbsp;O led possui uma parte negativa e positiva, e sua parte negativa é o local onde o led tem uma pequena raspagem, nesse projeto utilizados um sinal feito de mdf para conectar nossos leds, por isso o tutorial irá seguir esse caminho, sem conectar os led´s a protoboard, mas saiba que isso também é possível !
 
-Então vamos colocar os leds, na placa de mdf, com a parte raspada para cima, para facilitar a identificação. Agora vamos, resolver a parte positiva
+&nbsp;&nbsp;&nbsp;&nbsp;Então vamos colocar os leds, na placa de mdf, com a parte raspada para cima, para facilitar a identificação. Agora vamos, resolver a parte positiva
 
-- Pegue seu resistor de duas partes laranjas 
-- Conecte eles as colunas verticais da protoboard, porém esses resistores serão conectados na coluna a , separados um do outro, necessitamos de três resitores, um para cada led
-- Pegue um cabo macho-fêmea conecte em uma ponta do resistor na linha que contem 5 oríficios, pode conectar e qualquer um desses orifícios a frentes( faça isso com todos)
-- Agora escolha as portas de conexão do arduíno onde serão conectadas as correntes positivas
+- Pegue seu resistor de duas partes laranjas; 
+- Conecte eles as colunas verticais da protoboard, porém esses resistores serão conectados na coluna a , separados um do outro, necessitamos de três resitores, um para cada led;
+- Pegue um cabo macho-fêmea conecte em uma ponta do resistor na linha que contem 5 oríficios, pode conectar e qualquer um desses orifícios a frentes( faça isso com todos);
+- Agora escolha as portas de conexão do arduíno onde serão conectadas as correntes positivas;
 - No meu caso, eu escolhi as portas 8, 12 e 13 
-- Agora pegue um cabo macho-macho, conecte uma ponta dele em um lado do resistor e sua outra ponta nas portas do arduíno Uno 
-- Pegue seu cabo usb, conecte no arduíno e no computador e logo depois execute o código com o arduíno IDE
-- Não esqueça de conectar seus leds a plaquinha de mdf, para criar seu semáforo
+- Agora pegue um cabo macho-macho, conecte uma ponta dele em um lado do resistor e sua outra ponta nas portas do arduíno Uno;
+- Pegue seu cabo usb, conecte no arduíno e no computador e logo depois execute o código com o arduíno IDE;
+- Não esqueça de conectar seus leds a plaquinha de mdf, para criar seu semáforo;
 
 Ao final da montagem o circuito ele deve estar dessa forma:
 
@@ -119,5 +121,110 @@ Ao final da montagem o circuito ele deve estar dessa forma:
 
 ![Semáforo físico 2](assets/semaforo2.jpg)
 
+### Código da programação do semáforo
+
+&nbsp;&nbsp;&nbsp;&nbsp;Logo abaixo, você irá identificsr o código reponsável pelo funcionamento do semáforo, que também conta com comentários!
+
+```bash
+// Definindo os pinos 
+const int LedVerde = 8;
+const int LedAmarelo = 12;
+const int LedVermelho = 13;
+
+// Definindo as durações em milissegundos
+const long verde = 4000;
+const long amarelo = 2000;
+const long vermelho = 6000; 
+
+// Variável de estado o Vermelho = 0 , o Verde = 1, Amarelo = 2
+int estado = 0; // Começa no vermelho
+
+// Variável de temporização último momento da mudança de estado
+unsigned long tempo = 0;
+
+void setup() {
+    pinMode(LedVerde , OUTPUT);
+    pinMode(LedAmarelo , OUTPUT);
+    pinMode(LedVermelho , OUTPUT);
+
+    // Inicia no estado 0 vermelho)
+    digitalWrite(LedVermelho, 1); 
+}
+
+void loop() { 
+    // Cálculo do tempo decorrido
+    unsigned long agora = millis(); 
+    unsigned long decorrido = agora - tempo;
+    
+
+    // Estado 0: vermelho
+    if (estado == 0) {
+        if (decorrido >= vermelho) {
+            // Desliga Vermelho, Liga Verde
+            digitalWrite(LedVermelho, 0); 
+            digitalWrite(LedVerde, 1);  
+
+            estado = 1;      // Vai para o estado verde
+            tempo = agora;   // Reseta o timer
+        }
+    }
+
+    // Estado 1: verde
+    else if (estado == 1) { 
+        if (decorrido >= verde) {
+            // Desliga Verde e liga Amarelo
+            digitalWrite(LedVerde, 0);
+            digitalWrite(LedAmarelo, 1); 
+
+            estado = 2;      // Vai para o estado amarelo
+            tempo = agora;   // Reseta o timer
+        }
+    }
+
+    // Estado 2: amarelo
+    else if (estado == 2) {
+        if (decorrido >= amarelo) {
+            // Desliga Amarelo e liga Vermelho
+            digitalWrite(LedAmarelo, 0);
+            digitalWrite(LedVermelho, 1);
+            
+            estado = 0;      // Volta para o estado vermelho
+            tempo = agora;   // Reseta o timer
+        }
+    }
+}
+```
+
+## <a name="c4"></a>4. Avaliação em Pares
+
+&nbsp;&nbsp;&nbsp;&nbsp;A avaliação em pares consiste na avaliação e considerações de colegas de classe sobre o projeto desenvolvido, de acordo com a tabela que você irá identificar abaixo que foi disponibilizada pelo professor.
+
+&nbsp;&nbsp;&nbsp;&nbsp;No meu caso, fui avaliada por duas colegas de classe Luana De Jesus Lima e Sarah Araujo Duarte, veja abaixo as tabelas de avaliação:
+
+**Tabela 2 – Avaliação em pares**
+
+#### Avaliador: Luana De Jesus Lima
+|Critério|	Contempla (Pontos)|	Contempla Parcialmente (Pontos)	|Não Contempla (Pontos)	|Observações do Avaliador|
+|-|-|-|-|-|
+|Montagem física com cores corretas, boa disposição dos fios e uso adequado de resistores	|Até 3	|Até 1,5	|0 | Comtempla todos os critérios |	
+|Temporização adequada conforme tempos medidos com auxílio de algum instrumento externo	|Até 3	|Até 1,5	|0 | Comtempla todos os critérios |	
+|Código implementa corretamente as fases do semáforo e estrutura do código (variáveis representativas e comentários) |	Até 3|	Até 1,5 |	0 | Comtempla todos os critérios |	
+|Ir além: Implementou um componente de extra, fez com millis() ao invés do delay() e/ou usou ponteiros no código |	Até 1 |	Até 0,5 |	0 | Comtempla todos os critérios |	
+| | | | |Pontuação Total: 10|
+
+**Tabela 3 – Avaliação em pares**
+
+#### Avaliador: Sarah Araujo Duarte
+|Critério|	Contempla (Pontos)|	Contempla Parcialmente (Pontos)	|Não Contempla (Pontos)	|Observações do Avaliador|
+|-|-|-|-|-|
+|Montagem física com cores corretas, boa disposição dos fios e uso adequado de resistores	|Até 3	|Até 1,5	|0 | Comtempla todos os critérios |	
+|Temporização adequada conforme tempos medidos com auxílio de algum instrumento externo	|Até 3	|Até 1,5	|0 | Comtempla todos os critérios |	
+|Código implementa corretamente as fases do semáforo e estrutura do código (variáveis representativas e comentários) |	Até 3|	Até 1,5 |	0 | Comtempla todos os critérios |	
+|Ir além: Implementou um componente de extra, fez com millis() ao invés do delay() e/ou usou ponteiros no código |	Até 1 |	Até 0,5 |	0 | Comtempla todos os critérios |	
+| | | | |Pontuação Total: 10|
+
+&nbsp;&nbsp;&nbsp;&nbsp;As avaliadoras, não deram mais considerações sobre o projeto. Porém avaliaram com total todos os critérios de avaliação disponibilizados.
+
+<a name="c5"></a>5. Conclusão
 
 
