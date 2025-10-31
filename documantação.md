@@ -35,7 +35,7 @@
 
 ### Parte 1 - Montagem Física do Semáforo
 
-#### Materiais utilizados 
+### Materiais utilizados 
 
 
 
